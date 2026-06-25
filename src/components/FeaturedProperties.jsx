@@ -1,5 +1,5 @@
 import PropertyCard from "./PropertyCard";
-import Properties from "../data/Properties";
+import properties from "../data/Properties";
 
 const FeaturedProperties = () => {
   return (
