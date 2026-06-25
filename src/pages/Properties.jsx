@@ -1,5 +1,5 @@
 import PropertyCard from "../components/PropertyCard";
-import properties from "../data/properties";
+import Properties from "../data/Properties";
 
 const Properties = () => {
   return (

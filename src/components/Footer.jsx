@@ -38,7 +38,7 @@ const Footer = () => {
 
     <li>
       <Link
-        to="/properties"
+        to="/Properties"
         className="text-gray-400 hover:text-white"
       >
         Properties
