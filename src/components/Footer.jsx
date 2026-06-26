@@ -1,76 +1,237 @@
 import { Link } from "react-router-dom";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaTwitter,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaHome,
+} from "react-icons/fa";
+
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-12">
-      <div className="w-full px-6 lg:px-20">
-        <div className="grid md:grid-cols-3 gap-8">
-          <div>
-            <h2 className="text-2xl font-bold">Dream Homes</h2>
+    <footer className="bg-slate-950 text-gray-300">
 
-            <p className="mt-3 text-gray-400">
-              Your trusted real estate partner.
+      {/* Top Footer */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+          {/* Company */}
+          <div>
+
+            <div className="flex items-center gap-3 mb-6">
+
+              <div className="bg-gradient-to-r from-yellow-400 to-yellow-600 p-3 rounded-xl">
+                <FaHome className="text-slate-900 text-xl" />
+              </div>
+
+              <div>
+                <h2 className="text-3xl font-bold text-white">
+                  Dream
+                  <span className="text-yellow-400">
+                    Homes
+                  </span>
+                </h2>
+
+                <p className="text-sm text-gray-400 uppercase tracking-widest">
+                  Luxury Real Estate
+                </p>
+              </div>
+
+            </div>
+
+            <p className="leading-8 text-gray-400">
+              We help families and investors find luxury
+              villas, apartments, office spaces and
+              commercial properties with complete
+              transparency and trusted guidance.
             </p>
+
           </div>
 
+          {/* Quick Links */}
           <div>
-  <h3 className="text-xl font-semibold mb-4">
-    Quick Links
-  </h3>
 
-  <ul className="space-y-3">
-    <li>
-      <Link
-        to="/"
-        className="text-gray-400 hover:text-white"
-      >
-        Home
-      </Link>
-    </li>
+            <h3 className="text-2xl font-semibold text-white mb-6">
+              Quick Links
+            </h3>
 
-    <li>
-      <Link
-        to="/about"
-        className="text-gray-400 hover:text-white"
-      >
-        About
-      </Link>
-    </li>
+            <ul className="space-y-4">
 
-    <li>
-      <Link
-        to="/Properties"
-        className="text-gray-400 hover:text-white"
-      >
-        Properties
-      </Link>
-    </li>
+              <li>
+                <Link
+                  to="/"
+                  className="hover:text-yellow-400 transition"
+                >
+                  Home
+                </Link>
+              </li>
 
-    <li>
-      <Link
-        to="/contact"
-        className="text-gray-400 hover:text-white"
-      >
-        Contact
-      </Link>
-    </li>
-  </ul>
-</div>
+              <li>
+                <Link
+                  to="/properties"
+                  className="hover:text-yellow-400 transition"
+                >
+                  Properties
+                </Link>
+              </li>
 
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Contact</h3>
+              <li>
+                <Link
+                  to="/about"
+                  className="hover:text-yellow-400 transition"
+                >
+                  About Us
+                </Link>
+              </li>
 
-            <p>📍 Ahmedabad, Gujarat</p>
-            <p>📞 +91 9876543210</p>
-            <p>✉ info@dreamhomes.com</p>
+              <li>
+                <Link
+                  to="/contact"
+                  className="hover:text-yellow-400 transition"
+                >
+                  Contact
+                </Link>
+              </li>
+
+            </ul>
+
           </div>
+
+          {/* Property Types */}
+          <div>
+
+            <h3 className="text-2xl font-semibold text-white mb-6">
+              Property Types
+            </h3>
+
+            <ul className="space-y-4">
+
+              <li className="hover:text-yellow-400 transition cursor-pointer">
+                Luxury Villas
+              </li>
+
+              <li className="hover:text-yellow-400 transition cursor-pointer">
+                Apartments
+              </li>
+
+              <li className="hover:text-yellow-400 transition cursor-pointer">
+                Commercial Spaces
+              </li>
+
+              <li className="hover:text-yellow-400 transition cursor-pointer">
+                Office Spaces
+              </li>
+
+              <li className="hover:text-yellow-400 transition cursor-pointer">
+                Investment Properties
+              </li>
+
+            </ul>
+
+          </div>
+
+          {/* Contact */}
+          <div>
+
+            <h3 className="text-2xl font-semibold text-white mb-6">
+              Contact Us
+            </h3>
+
+            <div className="space-y-5">
+
+              <div className="flex items-center gap-4">
+                <FaMapMarkerAlt className="text-yellow-400" />
+                <span>Ahmedabad, Gujarat, India</span>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <FaPhoneAlt className="text-yellow-400" />
+                <span>+91 98765 43210</span>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <FaEnvelope className="text-yellow-400" />
+                <span>info@dreamhomes.com</span>
+              </div>
+
+            </div>
+
+            {/* Social Icons */}
+
+            <div className="flex gap-4 mt-8">
+
+              <a
+                href="#"
+                className="bg-slate-800 p-3 rounded-full hover:bg-yellow-500 hover:text-black transition"
+              >
+                <FaFacebookF />
+              </a>
+
+              <a
+                href="#"
+                className="bg-slate-800 p-3 rounded-full hover:bg-yellow-500 hover:text-black transition"
+              >
+                <FaInstagram />
+              </a>
+
+              <a
+                href="#"
+                className="bg-slate-800 p-3 rounded-full hover:bg-yellow-500 hover:text-black transition"
+              >
+                <FaLinkedinIn />
+              </a>
+
+              <a
+                href="#"
+                className="bg-slate-800 p-3 rounded-full hover:bg-yellow-500 hover:text-black transition"
+              >
+                <FaTwitter />
+              </a>
+
+            </div>
+
+          </div>
+
         </div>
 
-        <hr className="my-8 border-gray-700" />
-
-        <p className="text-center text-gray-400">
-          © 2026 Dream Homes. All Rights Reserved.
-        </p>
       </div>
+
+      {/* Bottom Footer */}
+
+      <div className="border-t border-slate-800">
+
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex flex-col md:flex-row justify-between items-center">
+
+          <p className="text-gray-500 text-center md:text-left">
+            © 2026 <span className="text-yellow-400">Dream Homes</span>. All Rights Reserved.
+          </p>
+
+          <div className="flex gap-6 mt-4 md:mt-0">
+
+            <Link
+              to="/"
+              className="hover:text-yellow-400 transition"
+            >
+              Privacy Policy
+            </Link>
+
+            <Link
+              to="/"
+              className="hover:text-yellow-400 transition"
+            >
+              Terms & Conditions
+            </Link>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </footer>
   );
 };

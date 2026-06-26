@@ -1,52 +1,60 @@
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+
 const ContactSection = () => {
+  const initialValues = {
+    fullName: "",
+    email: "",
+    phone: "",
+    propertyType: "",
+    message: "",
+  };
+
+  const validationSchema = Yup.object({
+    fullName: Yup.string()
+      .min(3, "Name must be at least 3 characters")
+      .required("Full Name is required"),
+
+    email: Yup.string()
+      .email("Enter a valid email")
+      .required("Email is required"),
+
+    phone: Yup.string()
+      .matches(/^[0-9]{10}$/, "Phone number must be exactly 10 digits")
+      .required("Phone number is required"),
+
+    propertyType: Yup.string()
+      .required("Please enter property type"),
+
+    message: Yup.string()
+      .min(10, "Message must contain at least 10 characters")
+      .required("Message is required"),
+  });
+
+  const handleSubmit = (values, { setSubmitting, resetForm }) => {
+    console.log(values);
+
+    setTimeout(() => {
+      alert("Inquiry Sent Successfully!");
+      resetForm();
+      setSubmitting(false);
+    }, 2000);
+  };
+
   return (
-    <section
-      id="contact"
-      className="py-20 px-6 lg:px-20 bg-gray-100"
-    >
-      <div className="max-w-5xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-10">
-          Contact Us
-        </h2>
-
-        <form className="grid md:grid-cols-2 gap-6">
-          <input
-            type="text"
-            placeholder="Full Name"
-            className="border p-4 rounded-lg"
-          />
-
-          <input
-            type="email"
-            placeholder="Email Address"
-            className="border p-4 rounded-lg"
-          />
-
-          <input
-            type="tel"
-            placeholder="Phone Number"
-            className="border p-4 rounded-lg"
-          />
-
-          <input
-            type="text"
-            placeholder="Property Interested In"
-            className="border p-4 rounded-lg"
-          />
-
-          <textarea
-            rows="5"
-            placeholder="Message"
-            className="border p-4 rounded-lg md:col-span-2"
-          />
-
-          <button
-            className="bg-blue-600 text-white p-4 rounded-lg hover:bg-blue-700 md:col-span-2"
-          >
-            Send Message
-          </button>
-        </form>
-      </div>
+    <section>
+      <Formik
+        initialValues={initialValues}
+        validationSchema={validationSchema}
+        onSubmit={handleSubmit}
+      >
+        {({ isSubmitting }) => (
+          <Form>
+            {/* Your entire form UI goes here */}
+          </Form>
+        )}
+      </Formik>
     </section>
   );
 };
